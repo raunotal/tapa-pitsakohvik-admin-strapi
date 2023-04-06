@@ -1,12 +1,14 @@
 module.exports = {
-  apps: [{
+  apps: [
+    {
       name: "strapi",
-      script: "yarn",
+      script: "npm",
       args: "start",
       cwd: process.env.HOME + "/strapi",
-      max_memory_restart : "512M",
+      max_memory_restart: "512M",
       env: {
-          NODE_ENV: "production"
-      }
-  }] 
-}
+        NODE_ENV: "production",
+      },
+    },
+  ],
+};
