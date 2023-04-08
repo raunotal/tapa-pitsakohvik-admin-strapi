@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipe_products",
+  "info": {
+    "singularName": "recipe-product",
+    "pluralName": "recipe-products",
+    "displayName": "Recipe Product"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Quantity": {
+      "type": "decimal",
+      "required": true
+    },
+    "Comments": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::unit.unit",
+      "inversedBy": "recipe_products"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "recipe_products"
+    },
+    "recipe": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recipe.recipe",
+      "inversedBy": "recipe_products"
+    }
+  }
+}

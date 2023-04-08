@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "units",
+  "info": {
+    "singularName": "unit",
+    "pluralName": "units",
+    "displayName": "Unit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Ratio": {
+      "type": "decimal"
+    },
+    "parent_unit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::unit.unit",
+      "inversedBy": "children_units"
+    },
+    "children_units": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::unit.unit",
+      "mappedBy": "parent_unit"
+    },
+    "recipe_products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe-product.recipe-product",
+      "mappedBy": "unit"
+    }
+  }
+}

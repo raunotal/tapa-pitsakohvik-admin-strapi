@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stages",
+  "info": {
+    "singularName": "stage",
+    "pluralName": "stages",
+    "displayName": "Stage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "recipe": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recipe.recipe",
+      "inversedBy": "stages"
+    },
+    "stage_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::stage-type.stage-type",
+      "inversedBy": "stages"
+    }
+  }
+}

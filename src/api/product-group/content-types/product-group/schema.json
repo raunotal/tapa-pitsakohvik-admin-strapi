@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_groups",
+  "info": {
+    "singularName": "product-group",
+    "pluralName": "product-groups",
+    "displayName": "Product Group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "parent_product_group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-group.product-group",
+      "inversedBy": "children_product_groups"
+    },
+    "children_product_groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-group.product-group",
+      "mappedBy": "parent_product_group"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "product_group"
+    }
+  }
+}

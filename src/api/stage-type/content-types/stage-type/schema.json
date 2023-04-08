@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stage_types",
+  "info": {
+    "singularName": "stage-type",
+    "pluralName": "stage-types",
+    "displayName": "Stage Type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "stages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stage.stage",
+      "mappedBy": "stage_type"
+    }
+  }
+}
