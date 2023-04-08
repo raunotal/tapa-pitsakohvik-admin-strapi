@@ -38,6 +38,13 @@
       "relation": "oneToMany",
       "target": "api::recipe-product.recipe-product",
       "mappedBy": "recipe"
+    },
+    "Photos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
