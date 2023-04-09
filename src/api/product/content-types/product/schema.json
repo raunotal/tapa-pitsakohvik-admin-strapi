@@ -26,12 +26,6 @@
     "Comments": {
       "type": "text"
     },
-    "product_group": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product-group.product-group",
-      "inversedBy": "products"
-    },
     "product_type": {
       "type": "relation",
       "relation": "manyToOne",
@@ -50,6 +44,12 @@
       ],
       "type": "media",
       "multiple": true
+    },
+    "recipe": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::recipe.recipe",
+      "mappedBy": "product"
     }
   }
 }
