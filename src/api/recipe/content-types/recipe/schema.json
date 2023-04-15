@@ -19,7 +19,7 @@
     },
     "DurationInMinutes": {
       "type": "integer",
-      "required": true
+      "required": false
     },
     "Description": {
       "type": "text"

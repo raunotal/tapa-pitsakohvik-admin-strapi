@@ -36,6 +36,10 @@
       "relation": "oneToMany",
       "target": "api::recipe-product.recipe-product",
       "mappedBy": "unit"
+    },
+    "Abbreviation": {
+      "type": "string",
+      "required": true
     }
   }
 }
